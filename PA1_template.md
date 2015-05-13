@@ -1,6 +1,9 @@
 # Reproducible Research: Peer Assessment 1
 
-'r opts_chunk$set(echo=FALSE, results = "hide")'
+
+```
+## Warning: package 'knitr' was built under R version 3.1.3
+```
 
 ## Instructions
 
@@ -115,7 +118,7 @@ data.new <- data[, c(1:3)] #remove added column (i.e mean column)
 ```r
 h2data <- ddply (data.new, .(date), summarize, sum=sum(steps))
 par (mar=c(4,4,2,1))
-hist(h2data$sum, 10, main = "Total number of steps taken per day", xlab = "")
+hist(h2data$sum, 10, main = "Total number of steps taken per day (Adjusted)", xlab = "")
 ```
 
 ![](PA1_template_files/figure-html/hist2-1.png) 
@@ -140,7 +143,7 @@ round(median(h2data$sum), 0)
 ## [1] 10766
 ```
 
-Yes, the values differ from the estimates from the first part of the assignment. The impact of inputting missing data is minimal, as the median seems to change by only one step.
+**Yes, the values differ from the estimates from the first part of the assignment. The impact of inputting missing data is minimal, as the median seems to change by only one step.**
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
